@@ -7,3 +7,17 @@ function format_price($price) {
 
     return $price . " ₽";
 }
+
+function get_dt_range($expiration) {
+    date_default_timezone_set('Europe/Moscow');
+    $currentDate = strtotime(date('Y-m-d H:i'));
+    $expiration = strtotime($expiration);
+    $diff = $expiration - $currentDate;
+    $hours = floor($diff/3600);
+    $minutes = $diff / 60 % 60;
+
+    $res[] = $hours;
+    $res[] = $minutes;
+
+    return $res;
+}

@@ -3,6 +3,8 @@ require_once 'helpers.php';
 require_once 'functions.php';
 require_once 'data.php';
 
+var_dump(get_dt_range('2022-05-31'));
+
 $content = include_template('main.php', [
     'categories' => $categories,
     'products' => $products
